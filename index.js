@@ -18,6 +18,9 @@ app.use('/api', routes);
 // Set port for the server
 app.set('port', process.env.PORT || 3000);
 
+// Initialize countries
+global.countries = [];
+
 app.listen(app.get('port'), () => {
     console.log(`Server up on ${app.get('port')}`);
 });

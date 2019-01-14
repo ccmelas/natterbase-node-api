@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const routes = require('./routes/');
+const ErrorHandler = require('./handlers/ErrorHandler');
 
 dotenv.config({ path: '.env' });
 
@@ -14,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Register api routes
 app.use('/api', routes);
+
+// Handle 404s
+app.use(ErrorHandler.notFound);
 
 // Set port for the server
 app.set('port', process.env.PORT || 3000);

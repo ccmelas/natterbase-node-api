@@ -5,6 +5,13 @@ const routes = require('./routes/');
 
 dotenv.config({ path: '.env' });
 
+const app = express();
+
+
+// Takes the raw requests and turns them into usable properties on req.body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // Register api routes
 app.use('/api', routes);
 

@@ -11,7 +11,7 @@ class AuthController {
    * @param {object} res
    * @returns { object } [Returns response object]
    */
-  static async login(req, res) {
+  static login(req, res) {
     
     if (req.body.username === process.env.USERNAME && req.body.password === process.env.PASSWORD) {
 

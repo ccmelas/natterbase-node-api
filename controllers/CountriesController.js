@@ -9,7 +9,7 @@ class CountriesController {
    * @param {object} res
    * @returns { object } [Returns response object]
    */
-  static async index(req, res) {
+  static index(req, res) {
     return res.json({ countries});
   }
 
@@ -19,7 +19,7 @@ class CountriesController {
    * @param {object} res
    * @returns { object } [Returns response object]
    */
-  static async add(req, res) {
+  static add(req, res) {
     const country = req.body.country;
 
     if (!country)
@@ -36,7 +36,7 @@ class CountriesController {
    * @param {object} res
    * @returns { object } [Returns response object]
    */
-  static async delete(req, res) {
+  static delete(req, res) {
     const country = req.params.country;
 
     if (!country)
